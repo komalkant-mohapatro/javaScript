@@ -1,4 +1,4 @@
-// var , let , const
+//1. var , let , const
 
 
 var a = 12;
@@ -9,7 +9,7 @@ const a = 14; // use where you doesn't want to change the value of the variable 
 //const a;  // it can cause errors.
 
 
-// Declaration and Initialization:-
+//2. Declaration and Initialization:-
 //...................................................
 var a; // declaration
 a = 12; // initialization { giving the first value to the variable }
@@ -34,7 +34,7 @@ let b; // declaration
 b = 13; // initialization
 const c = 14; // declaration and initialization at the same time
 
-// Scope:(Global Scope, Function Scope, Block Scope):-
+//3. Scope:(Global Scope, Function Scope, Block Scope):-
 
 // Global Scope:-
 var a = 12; // which is not inside any bracket or function is called global scope. It can be accessed anywhere in the code.
@@ -57,7 +57,7 @@ function myFunction() {
 
 
 
-// Redeclaration and Reassignment:-
+//4. Redeclaration and Reassignment:-
 
 var a = 12; // redeclaration and reassignment is possible with var
 var a = 13; // redeclaration and reassignment is possible with var
@@ -66,9 +66,10 @@ let a = 12; // redeclaration is not possible with let
 let a = 13; // redeclaration is not possible with let
 
 
-//Temoral Dead Zone:-
+//5.Temoral Dead Zone:-
 
 //Utna area jitne mein js ko pata to hai ki variable exist karta hai par wo aapko value nahi de sakta hai.
+// var meinn temperal dead zone nahi hota. Let mein hota hai.
 console.log(e); // it will give you an error because a is in temporal dead zone.
 
 
@@ -86,6 +87,57 @@ var f = 12;
 
 // REASON:-
 
-// HOISTING AND IMPACT PER TYPE:
+//6. HOISTING AND IMPACT PER TYPE:
 // Hoisting means :- Ek variable ko jab js mein banaate hai to wo variable do hisso mein toot jaata hai and uska declare part upar chala jaata hai and uska intillizatio part neeche reh jata hai.
 
+// Example:-
+ 
+// If i delcare var a = 12; // it is broken into two parts:- var a; and a = 12; and var a; is hoisted to the top of the code and a = 12; is left at the same place. So when we try to access the variable before initialization it gives us undefined because only declaration part is hoisted to the top and initialization part is left at the same place.
+let a = undefined; 
+console.log(a); 
+a = 12;
+
+//... This is what hoisting look like in case of var......//
+
+
+// IN case of let and const:-
+// let -  > hoist -> reference error
+// const -> hoist -> reference error
+
+
+//6. Questions:-
+
+var x = 12;// global scope variable
+{
+    var x = 13;// As it is not inside any function, it is also a global scope variable.
+}
+
+console.log(x); // As the both the variable are in global scope so the updated variable will be the output.
+// In this case the output will be 13.
+
+let r =10 ;// global scope variable
+{
+    let r = 20;
+    console.log(" inside",r); // block scope variable. 
+}
+console.log("outside",r); 
+
+// So the output will be:-
+// inside 20
+// outside 10
+
+if (true) {
+    var a = 12;
+    let b = 13;
+    
+}
+console.log(a); 
+console.log(b); 
+
+// So the output will be:-
+// a=12 // var doesnt respect block scope and it is function scoped so it can be accessed outside the block.
+// b= Reference error because b is block scope variable and it cannot be accessed outside the block.
+
+const person = {name: "Harsh"};
+person.name = "Harshvardhan"; // we can change the value of the property of the object but we cannot reassign the object itself.
+person={}; // it will give an error because we cannot reassign the object itself. We can only change the properties of the object.
