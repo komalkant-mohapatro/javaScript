@@ -64,3 +64,28 @@ var a = 13; // redeclaration and reassignment is possible with var
 
 let a = 12; // redeclaration is not possible with let
 let a = 13; // redeclaration is not possible with let
+
+
+//Temoral Dead Zone:-
+
+//Utna area jitne mein js ko pata to hai ki variable exist karta hai par wo aapko value nahi de sakta hai.
+console.log(e); // it will give you an error because a is in temporal dead zone.
+
+
+let e =  12;
+let d =  34;
+
+// but in  var it is possibe.
+// Example:-
+
+console.log(f);
+
+var f = 12;
+
+// It will give the output as undefined . but doesnt show any error which was there in the case of let.
+
+// REASON:-
+
+// HOISTING AND IMPACT PER TYPE:
+// Hoisting means :- Ek variable ko jab js mein banaate hai to wo variable do hisso mein toot jaata hai and uska declare part upar chala jaata hai and uska intillizatio part neeche reh jata hai.
+
