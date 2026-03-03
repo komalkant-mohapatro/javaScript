@@ -140,4 +140,4 @@ console.log(b);
 
 const person = {name: "Harsh"};
 person.name = "Harshvardhan"; // we can change the value of the property of the object but we cannot reassign the object itself.
-person={}; // it will give an error because we cannot reassign the object itself. We can only change the properties of the object.
+person={}; // it will give an error because we cannot reassign the object itself. We can only change the properties of the object..
