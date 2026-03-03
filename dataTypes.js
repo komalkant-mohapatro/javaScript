@@ -99,10 +99,45 @@ person.name = "Doe"; // the output will be {name: "Doe", age: 30, city: "New Yor
 
 
 
-//Dynamic Typing: JavaScript is a dynamically typed language, which means that you don't have to specify the data type of a variable when you declare it. The data type of a variable can change at runtime based on the value assigned to it.
+//2.Dynamic Typing: JavaScript is a dynamically typed language, which means that you don't have to specify the data type of a variable when you declare it. The data type of a variable can change at runtime based on the value assigned to it.
 let x = 10; // x is a number
 console.log(typeof x); // the output will be "number"
 
 x = "Hello";    // x is now a string
 console.log(typeof x); // the output will be "string"           
 
+
+let j = 12;
+ j = "Hello";
+ j = true;
+  j = null;
+ j = undefined;
+ j ={};
+ j=  [];
+ console.log(typeof j); // the output will be "object" cause the last value of j is an empty object. so the type of j is object.
+  
+
+ //D.........Types of quirks in JavaScript:.............................................................................................................
+
+ //1. Type Coercion: JavaScript automatically converts values from one data type to another when performing operations. This can lead to unexpected results if you're not careful.
+ let result = '5' + 10; // the output will be "510" cause the + operator is used for string concatenation when one of the operands is a string. so the number 10 is coerced to a string and concatenated with '5' to produce "510".
+ console.log(result);
+
+ // + operator can used in both addition of number and if one is number annd one is string then it concatenate the string and number. but if both are number then it will add the numbers.
+ //- operator can onnly used for subtraction of numbers, if we try to " 5" - 1 then the output will be 4 cause the - operator is used for subtraction of numbers. so the string '5' is coerced to a number and subtracted by 1 to produce 4.
+
+ //2. NaN (Not a Number): NaN is a special value in JavaScript that represents an invalid number. It can be the result of an operation that cannot produce a valid number, such as dividing zero by zero or trying to parse a non-numeric string as a number.
+let invalidNumber = 0 / 0; // the output will be NaN cause dividing zero by zero is an invalid operation that cannot produce a valid number.
+
+
+//E...........................Truthy and Falsy Values:.............................................................................................................
+
+// 0 false "" null underfined NaN document.all are falsy values in JavaScript. all other values are truthy values in JavaScript.
+if(0){
+
+}
+// the output will be nothing cause 0 is a falsy value in JavaScript. so the if condition will not be executed.
+if(-1){
+
+}
+// the output will be nothing cause -1 is a truthy value in JavaScript. so the if condition will be executed.
