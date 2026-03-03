@@ -92,7 +92,8 @@ var f = 12;
 
 // Example:-
  
-// If i delcare var a = 12; // it is broken into two parts:- var a; and a = 12; and var a; is hoisted to the top of the code and a = 12; is left at the same place. So when we try to access the variable before initialization it gives us undefined because only declaration part is hoisted to the top and initialization part is left at the same place.
+// If i delcare var a = 12; // it is broken into two parts:- var a; and a = 12; and var a; is hoisted to the top of the code and a = 12; is left at the same place. So when we try to access the...
+// .... variable before initialization it gives us undefined because only declaration part is hoisted to the top and initialization part is left at the same place.
 let a = undefined; 
 console.log(a); 
 a = 12;
