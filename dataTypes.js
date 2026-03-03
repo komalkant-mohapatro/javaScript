@@ -141,3 +141,18 @@ if(-1){
 
 }
 // the output will be nothing cause -1 is a truthy value in JavaScript. so the if condition will be executed.
+
+
+
+
+
+////...................conusion about NaN:.............................................................................................................
+ typeof NaN === 'number'// is true , because nan is a failed number operation, js treat him as a failed number operation as a number. but NaN is not a valid number, it is a special value that represents an invalid number. so the output will be true. but if we try to check if NaN is a valid number then the output will be false.
+ /////..............conclusion about null and undefined:.............................................................................................................
+
+ let e;
+    console.log(e); // undefined
+let y = null;
+console.log(y); // null
+console.log(typeof e); // the output will be "undefined" cause e is declared but not assigned any value, so its value is undefined. and the type of e is also undefined.
+console.log(typeof y); // the output will be "object" cause y is assigned the value null, and the type of null is object in JavaScript. this is a quirk in JavaScript that null is considered an object type, even though it represents the absence of any object value.    
